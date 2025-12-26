@@ -25,6 +25,7 @@
               }
             ],
             "styles": [
+              "src/assets/styles.scss",
               "src/styles.css"
             ]
           },
