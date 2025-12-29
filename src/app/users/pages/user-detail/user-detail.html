@@ -1,0 +1,17 @@
+<div class="card">
+
+    <div class="font-semibold text-xl mb-4">Detalle del usuario</div>
+
+
+    @if (userResource.isLoading()) {
+    <div class="card flex justify-center">
+        <p-progress-spinner ariaLabel="loading" />
+    </div>
+    }
+
+    <!--- -->
+    @if (userResource.hasValue()) {
+    <app-user-form [user]="userResource.value()" />
+    }
+
+</div>

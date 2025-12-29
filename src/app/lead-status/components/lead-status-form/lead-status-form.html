@@ -1,0 +1,17 @@
+<form [formGroup]="leadStatusForm" (ngSubmit)="onSubmit()">
+    <p-fluid>
+        <div class="flex flex-col gap-6 w-full">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex flex-wrap gap-2 w-full">
+                    <label for="firstname2">Nombre</label>
+                    <input pInputText type="text" formControlName="name"
+                        [invalid]="leadStatusForm.get('name')?.errors ?? false" />
+                    <form-error-label [control]="leadStatusForm.get('name')!" />
+                </div>
+            </div>
+            <div class="flex justify-start">
+                <p-button label="Guardar" severity="primary" icon="pi pi-check" type="submit"></p-button>
+            </div>
+        </div>
+    </p-fluid>
+</form>

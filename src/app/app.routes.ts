@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AppLayout } from './layout/component/app.layout';
 import { NotAuthenticatedGuard } from './auth/guards/not-authenticated.guard';
 
 export const routes: Routes = [
@@ -11,7 +10,15 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '',
-    component: AppLayout,
+    path: 'users',
+    loadChildren: () => import('./users/user.routes'),
   },
+  {
+    path: 'leads',
+    loadChildren: () => import('./leads/lead.routes'),
+  },
+  {
+    path: 'lead-status',
+    loadChildren: () => import('./lead-status/lead-status.routes'),
+  }
 ];

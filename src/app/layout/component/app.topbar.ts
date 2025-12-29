@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { StyleClassModule } from 'primeng/styleclass';
 import { AppConfigurator } from './app.configurator';
@@ -82,7 +82,7 @@ import { Button } from 'primeng/button';
                     @if( authService.authStatus() === 'authenticated') {
                         <p-button label="{{ authService.user()?.firstName }}" variant="text" severity="secondary" icon="pi pi-user"/>
 
-                        <p-button label="Cerrar sesión" severity="danger" (click)="authService.logout()"/>
+                        <p-button label="Cerrar sesión" severity="danger" (click)="onLogout()"/>
                     }
                 </div>
             </div>
@@ -91,6 +91,8 @@ import { Button } from 'primeng/button';
 })
 export class AppTopbar {
     items!: MenuItem[];
+    authService = inject(AuthService);
+    router = inject(Router);
 
     constructor(public layoutService: LayoutService) { }
 
@@ -98,5 +100,9 @@ export class AppTopbar {
         this.layoutService.layoutConfig.update((state) => ({ ...state, darkTheme: !state.darkTheme }));
     }
 
-    authService = inject(AuthService);
+    onLogout() {
+        this.authService.logout();
+        this.router.navigateByUrl('/auth/login');
+    }
+
 }

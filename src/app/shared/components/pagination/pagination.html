@@ -1,0 +1,16 @@
+<!-- <div class="card flex justify-center">
+    <p-paginator [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" />
+</div> -->
+<!-- 
+<div class="card flex justify-center">
+    @for (page of getPagesList(); track page) {
+    <p-button [class.btn-primary]="page === currentPage()" [routerLink]="[]" [queryParams]="{ page }">
+        {{ page }}
+    </p-button>
+    }
+</div> -->
+
+<div class="card flex justify-center">
+    <p-paginator [first]="first()" [rows]="limitPerPage()" [totalRecords]="totalRecords()"
+        (onPageChange)="onPageChange($event)" [rowsPerPageOptions]="[1,10, 20, 30]" />
+</div>

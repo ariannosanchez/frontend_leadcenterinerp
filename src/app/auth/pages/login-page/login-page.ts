@@ -42,7 +42,7 @@ export class LoginPage {
       if (isAuthenticated) {
         console.log('User después del login:', this.authService.user());
         console.log('Auth status:', this.authService.authStatus());
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/leads');
         return;
       }
 

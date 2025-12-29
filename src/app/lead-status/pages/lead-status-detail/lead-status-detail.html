@@ -1,0 +1,17 @@
+<div class="card">
+
+    <div class="font-semibold text-xl mb-4">Detalle del estado de lead</div>
+
+
+    @if (leadStatusResource.isLoading()) {
+    <div class="card flex justify-center">
+        <p-progress-spinner ariaLabel="loading" />
+    </div>
+    }
+
+    <!--- -->
+    @if (leadStatusResource.hasValue()) {
+    <app-lead-status-form [leadStatus]="leadStatusResource.value()" />
+    }
+
+</div>

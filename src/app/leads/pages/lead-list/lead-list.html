@@ -1,0 +1,8 @@
+<div class="card">
+    <div class="font-semibold text-xl mb-4">Gestión de leads</div>
+
+    <p>Total de leads: {{ leadResource.value()?.meta?.total ?? 0 }}</p>
+    <app-lead-table [lead]="leadResource.value()?.data ?? []"></app-lead-table>
+    <app-pagination [pages]="leadResource.value()?.meta?.totalPages ?? 0"
+        [currentPage]="paginationService.currentPage()" [limitPerPage]="paginationService.limitPerPage()" />
+</div>

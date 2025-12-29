@@ -1,0 +1,27 @@
+<p-table [value]="leadStatus()" stripedRows selectionMode="single" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template #header>
+        <tr>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-leadStatus>
+        <tr>
+            <td>{{ leadStatus.name }}</td>
+            <td>
+                @if (leadStatus.isActive) {
+                <p-tag value="Activo" severity="success"></p-tag>
+                } @else {
+                <p-tag value="Inactivo" severity="danger"></p-tag>
+                }
+            </td>
+            <td>
+                <p-button icon="pi pi-pencil" class="mr-2" (click)="edit.emit(leadStatus)" [rounded]="true"
+                    [outlined]="true" />
+                <p-button icon="pi pi-trash" severity="danger" (click)="delete.emit(leadStatus)" [rounded]="true"
+                    [outlined]="true" />
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

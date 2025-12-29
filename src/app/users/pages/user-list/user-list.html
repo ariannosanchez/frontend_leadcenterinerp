@@ -1,0 +1,9 @@
+<div class="card">
+    <div class="font-semibold text-xl mb-4">Gestión de usuarios</div>
+
+    <p>Total de usuarios: {{ usersResource.value()?.meta?.total ?? 0 }}</p>
+    <app-user-table [users]="usersResource.value()?.data ?? []" (edit)="editUser($event)"
+        (delete)="deleteUser($event)"></app-user-table>
+    <app-pagination [pages]="usersResource.value()?.meta?.totalPages ?? 0"
+        [currentPage]="paginationService.currentPage()" [limitPerPage]="paginationService.limitPerPage()" />
+</div>

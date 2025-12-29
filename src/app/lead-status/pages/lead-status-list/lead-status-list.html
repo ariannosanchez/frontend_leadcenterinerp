@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="font-semibold text-xl mb-4">Gestión de estados del lead</div>
+    <p>Total de estados: {{ leadStatusResource.value()?.meta?.total ?? 0 }}</p>
+
+    <p-toolbar class="mb-6">
+        <ng-template #start>
+            <p-button label="Nuevo estado" icon="pi pi-plus" severity="primary"
+                routerLink="/lead-status/detail/new"></p-button>
+        </ng-template>
+    </p-toolbar>
+
+    <app-lead-status-table [leadStatus]="leadStatusResource.value()?.data ?? []" (edit)="editLeadStatus($event)"
+        (delete)="deleteLeadStatus($event)"></app-lead-status-table>
+    <app-pagination [pages]="leadStatusResource.value()?.meta?.totalPages ?? 0"
+        [currentPage]="paginationService.currentPage()" [limitPerPage]="paginationService.limitPerPage()" />
+</div>

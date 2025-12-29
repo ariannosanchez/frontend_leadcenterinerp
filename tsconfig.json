@@ -3,6 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@utils/*": [
+        "./src/app/utils/*"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
