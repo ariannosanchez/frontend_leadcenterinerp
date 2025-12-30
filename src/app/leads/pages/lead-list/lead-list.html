@@ -1,8 +1,18 @@
 <div class="card">
     <div class="font-semibold text-xl mb-4">Gestión de leads</div>
 
+    <p-toolbar class="mb-6">
+        <ng-template #start>
+            <p-button label="Nuevo lead" icon="pi pi-plus" severity="primary"
+                routerLink="/lead-status/detail/new"></p-button>
+        </ng-template>
+    </p-toolbar>
+
+
     <p>Total de leads: {{ leadResource.value()?.meta?.total ?? 0 }}</p>
     <app-lead-table [lead]="leadResource.value()?.data ?? []"></app-lead-table>
     <app-pagination [pages]="leadResource.value()?.meta?.totalPages ?? 0"
         [currentPage]="paginationService.currentPage()" [limitPerPage]="paginationService.limitPerPage()" />
+
+    <app-lead-form></app-lead-form>
 </div>

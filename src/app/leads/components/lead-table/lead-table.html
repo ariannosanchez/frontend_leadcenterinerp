@@ -18,8 +18,8 @@
             <td>{{ lead.lastName }}</td>
             <td>{{ lead.email }}</td>
             <td>{{ lead.phone }}</td>
-            <td>{{ lead.statusId }}</td>
-            <td>{{ lead.userId }}</td>
+            <td>{{ lead.leadStatus.name }}</td>
+            <td>{{ lead.user.firstName }} {{ lead.user.lastName }}</td>
             <td>
                 @if (lead.isActive) {
                 <p-tag value="Activo" severity="success"></p-tag>

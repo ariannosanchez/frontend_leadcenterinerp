@@ -4,10 +4,14 @@ import { PaginationService } from '../../../shared/components/pagination/paginat
 import { rxResource } from '@angular/core/rxjs-interop';
 import { LeadTable } from '../../components/lead-table/lead-table';
 import { Pagination } from '../../../shared/components/pagination/pagination';
+import { LeadForm } from '../../components/lead-form/lead-form';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-lead-list',
-  imports: [LeadTable, Pagination],
+  imports: [LeadTable, Pagination, LeadForm, ToolbarModule, ButtonModule, RouterLink],
   templateUrl: './lead-list.html',
 })
 export class LeadList {

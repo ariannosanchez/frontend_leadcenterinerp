@@ -1,0 +1,66 @@
+<p-dialog [visible]="true" [style]="{width: '450px'}" header="Detalles del Lead" [modal]="true">
+    <ng-template #content>
+        <div class="flex flex-col gap-6">
+
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-6">
+                    <label class="block font-bold mb-3">Nombre(s)</label>
+                    <input type="text" pInputText required autofocus fluid />
+                </div>
+                <div class="col-span-6">
+                    <label class="block font-bold mb-3">Apellido(s)</label>
+                    <input type="text" pInputText required autofocus fluid />
+                </div>
+            </div>
+
+            <div>
+                <label class="block font-bold mb-3">Correo</label>
+                <input type="text" pInputText required autofocus fluid />
+            </div>
+
+            <div>
+                <label class="block font-bold mb-3">Telefono</label>
+                <input type="text" pInputText required autofocus fluid />
+            </div>
+
+            <div>
+                <label class="block font-bold mb-3">Estado</label>
+                <p-select inputId="inventoryStatus" optionLabel="label" optionValue="label"
+                    placeholder="Seleccione un estado" fluid />
+            </div>
+
+            <div>
+                <label class="block font-bold mb-3">Asignado</label>
+                <p-select inputId="inventoryStatus" optionLabel="label" optionValue="label"
+                    placeholder="Seleccione un usuario" fluid />
+            </div>
+
+            <!-- <div>
+                        <span class="block font-bold mb-4">Category</span>
+                        <div class="grid grid-cols-12 gap-4">
+                            <div class="flex items-center gap-2 col-span-6">
+                                <p-radiobutton id="category1" name="category" value="Accessories" [(ngModel)]="product.category" />
+                                <label for="category1">Accessories</label>
+                            </div>
+                            <div class="flex items-center gap-2 col-span-6">
+                                <p-radiobutton id="category2" name="category" value="Clothing" [(ngModel)]="product.category" />
+                                <label for="category2">Clothing</label>
+                            </div>
+                            <div class="flex items-center gap-2 col-span-6">
+                                <p-radiobutton id="category3" name="category" value="Electronics" [(ngModel)]="product.category" />
+                                <label for="category3">Electronics</label>
+                            </div>
+                            <div class="flex items-center gap-2 col-span-6">
+                                <p-radiobutton id="category4" name="category" value="Fitness" [(ngModel)]="product.category" />
+                                <label for="category4">Fitness</label>
+                            </div>
+                        </div>
+                    </div> -->
+        </div>
+    </ng-template>
+
+    <ng-template #footer>
+        <p-button label="Cancelar" icon="pi pi-times" text />
+        <p-button label="Guardar" icon="pi pi-check" />
+    </ng-template>
+</p-dialog>

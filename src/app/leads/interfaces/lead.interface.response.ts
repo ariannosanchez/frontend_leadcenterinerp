@@ -1,3 +1,6 @@
+import { User } from "../../auth/interfaces/user.interface";
+import { LeadStatus } from "../../lead-status/interfaces/lead-status.interface.response";
+
 export interface LeadResponse {
     data: Lead[];
     meta: Meta;
@@ -9,8 +12,10 @@ export interface Lead {
     lastName: string;
     email: string;
     phone: string;
-    statusId: string;
+    leadStatusId: string;
     userId: string;
+    user: User;
+    leadStatus: LeadStatus;
     isActive: boolean;
     createdAt: Date;
     updatedAt: Date;
